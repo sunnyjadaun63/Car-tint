@@ -1,0 +1,364 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------
+   APEX STUDIO 4-THEME SYSTEM (RGB Channels for Full Tailwind Opacity Support)
+   1. electric-blue (Default: Charcoal header/footer, White bg, Electric blue buttons)
+   2. black-gold    (Luxe: Deep Onyx black bg, Imperial gold buttons & accents)
+   3. charcoal-red  (Sport: Obsidian carbon bg, Racing crimson buttons & accents)
+   4. navy-teal     (Clean: Deep navy header/footer, White bg, Coastal teal buttons)
+------------------------------------------------------------------------- */
+
+:root,
+[data-theme="electric-blue"],
+.theme-electric-blue {
+  --color-bg-rgb: 255 255 255;
+  --color-surface-rgb: 255 255 255;
+  --color-alternate-rgb: 243 244 246;
+  --color-header-footer-rgb: 17 24 39;
+  --color-primary-rgb: 37 99 235;
+  --color-primary-hover-rgb: 29 78 216;
+  --color-text-muted-rgb: 75 85 99;
+
+  --color-text-main: #1F2937;
+  --color-border: #E5E7EB;
+  --shadow-glow: 0 4px 20px rgba(37, 99, 235, 0.4);
+  --shadow-glow-lg: 0 10px 40px rgba(37, 99, 235, 0.6);
+  --is-dark: 0;
+}
+
+[data-theme="black-gold"],
+.theme-black-gold {
+  --color-bg-rgb: 9 9 11;
+  --color-surface-rgb: 20 20 23;
+  --color-alternate-rgb: 28 28 33;
+  --color-header-footer-rgb: 12 10 9;
+  --color-primary-rgb: 234 179 8;
+  --color-primary-hover-rgb: 202 138 4;
+  --color-text-muted-rgb: 161 161 170;
+
+  --color-text-main: #FFFFFF;
+  --color-border: rgba(234, 179, 8, 0.25);
+  --shadow-glow: 0 0 35px rgba(234, 179, 8, 0.45);
+  --shadow-glow-lg: 0 0 60px rgba(234, 179, 8, 0.7);
+  --is-dark: 1;
+}
+
+[data-theme="charcoal-red"],
+.theme-charcoal-red {
+  --color-bg-rgb: 8 8 10;
+  --color-surface-rgb: 18 18 22;
+  --color-alternate-rgb: 24 24 31;
+  --color-header-footer-rgb: 13 17 23;
+  --color-primary-rgb: 217 20 36;
+  --color-primary-hover-rgb: 185 16 30;
+  --color-text-muted-rgb: 158 158 169;
+
+  --color-text-main: #FFFFFF;
+  --color-border: rgba(255, 255, 255, 0.1);
+  --shadow-glow: 0 0 35px rgba(217, 20, 36, 0.45);
+  --shadow-glow-lg: 0 0 60px rgba(217, 20, 36, 0.7);
+  --is-dark: 1;
+}
+
+[data-theme="navy-teal"],
+.theme-navy-teal {
+  --color-bg-rgb: 255 255 255;
+  --color-surface-rgb: 255 255 255;
+  --color-alternate-rgb: 241 245 249;
+  --color-header-footer-rgb: 15 23 42;
+  --color-primary-rgb: 13 148 136;
+  --color-primary-hover-rgb: 15 118 110;
+  --color-text-muted-rgb: 71 85 105;
+
+  --color-text-main: #0F172A;
+  --color-border: #CBD5E1;
+  --shadow-glow: 0 4px 20px rgba(13, 148, 136, 0.35);
+  --shadow-glow-lg: 0 10px 40px rgba(13, 148, 136, 0.55);
+  --is-dark: 0;
+}
+
+/* -------------------------------------------------------------------------
+   GLOBAL BODY & MAIN BACKGROUND ADAPTATION
+------------------------------------------------------------------------- */
+
+body {
+  background-color: rgb(var(--color-bg-rgb));
+  color: var(--color-text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* -------------------------------------------------------------------------
+   LIGHT THEMES TYPOGRAPHY & CARD RULES (Electric Blue & Navy Teal)
+------------------------------------------------------------------------- */
+
+[data-theme="electric-blue"] main,
+[data-theme="navy-teal"] main,
+.theme-electric-blue main,
+.theme-navy-teal main {
+  background-color: rgb(var(--color-bg-rgb));
+  color: var(--color-text-main);
+}
+
+/* Headings in main content area adapt to dark text */
+[data-theme="electric-blue"] main h1,
+[data-theme="electric-blue"] main h2,
+[data-theme="electric-blue"] main h3,
+[data-theme="electric-blue"] main h4,
+[data-theme="electric-blue"] main h5,
+[data-theme="electric-blue"] main h6,
+[data-theme="navy-teal"] main h1,
+[data-theme="navy-teal"] main h2,
+[data-theme="navy-teal"] main h3,
+[data-theme="navy-teal"] main h4,
+[data-theme="navy-teal"] main h5,
+[data-theme="navy-teal"] main h6 {
+  color: var(--color-text-main) !important;
+}
+
+/* General text-white elements inside main area convert to dark text,
+   UNLESS they are inside buttons, badges, video overlays, dark cards, or forced white elements */
+[data-theme="electric-blue"] main :not(
+  button,
+  a[class*="bg-crimson"],
+  button[class*="bg-crimson"],
+  [class*="bg-crimson"],
+  [class*="bg-emerald"],
+  [class*="bg-purple"],
+  [class*="bg-black"],
+  [class*="bg-midnight"],
+  [class*="bg-neutral-900"],
+  [class*="fixed"],
+  .fixed,
+  .text-white-forced
+).text-white,
+[data-theme="navy-teal"] main :not(
+  button,
+  a[class*="bg-crimson"],
+  button[class*="bg-crimson"],
+  [class*="bg-crimson"],
+  [class*="bg-emerald"],
+  [class*="bg-purple"],
+  [class*="bg-black"],
+  [class*="bg-midnight"],
+  [class*="bg-neutral-900"],
+  [class*="fixed"],
+  .fixed,
+  .text-white-forced
+).text-white {
+  color: var(--color-text-main);
+}
+
+/* Borders in light theme */
+[data-theme="electric-blue"] main div[class*="border-white/"],
+[data-theme="electric-blue"] main section[class*="border-white/"],
+[data-theme="electric-blue"] main p[class*="border-white/"],
+[data-theme="navy-teal"] main div[class*="border-white/"],
+[data-theme="navy-teal"] main section[class*="border-white/"],
+[data-theme="navy-teal"] main p[class*="border-white/"] {
+  border-color: var(--color-border);
+}
+
+/* Card backgrounds in light theme: clean crisp white cards with soft shadow */
+[data-theme="electric-blue"] main .bg-carbon,
+[data-theme="navy-teal"] main .bg-carbon {
+  background-color: #FFFFFF !important;
+  border-color: var(--color-border) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+}
+
+/* Sub-widgets & inner panels in light theme */
+[data-theme="electric-blue"] main .bg-obsidian:not(.text-white-forced),
+[data-theme="navy-teal"] main .bg-obsidian:not(.text-white-forced) {
+  background-color: rgb(var(--color-alternate-rgb)) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* Hero Image & Overlay adaptation across themes */
+[data-theme="electric-blue"] #hero img,
+[data-theme="navy-teal"] #hero img {
+  opacity: 0.96 !important;
+  filter: contrast(102%) brightness(100%) !important;
+}
+
+[data-theme="black-gold"] #hero img,
+[data-theme="charcoal-red"] #hero img {
+  opacity: 0.95 !important;
+  filter: contrast(105%) brightness(95%) !important;
+}
+
+/* Light theme gradient overlays for natural edge blending */
+[data-theme="electric-blue"] #hero .bg-gradient-to-t,
+[data-theme="navy-teal"] #hero .bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.2) 35%, transparent 60%, rgba(17, 24, 39, 0.45) 100%) !important;
+}
+[data-theme="electric-blue"] #hero .bg-gradient-to-r,
+[data-theme="navy-teal"] #hero .bg-gradient-to-r {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.6) 100%) !important;
+}
+
+/* Light theme watermark & hero HUD telemetry card */
+[data-theme="electric-blue"] #hero span.text-metallic-silver,
+[data-theme="navy-teal"] #hero span.text-metallic-silver {
+  color: rgba(17, 24, 39, 0.06) !important;
+  text-shadow: none !important;
+}
+
+[data-theme="electric-blue"] #hero .bg-carbon\/90,
+[data-theme="navy-teal"] #hero .bg-carbon\/90 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 15px 45px -5px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="electric-blue"] #hero .bg-carbon\/90 span.text-white,
+[data-theme="navy-teal"] #hero .bg-carbon\/90 span.text-white {
+  color: #1F2937 !important;
+}
+
+[data-theme="electric-blue"] #hero .bg-white\/10,
+[data-theme="navy-teal"] #hero .bg-white\/10 {
+  background-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Input fields in light theme */
+[data-theme="electric-blue"] main input,
+[data-theme="electric-blue"] main select,
+[data-theme="electric-blue"] main textarea,
+[data-theme="navy-teal"] main input,
+[data-theme="navy-teal"] main select,
+[data-theme="navy-teal"] main textarea {
+  background-color: #FFFFFF !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-main) !important;
+}
+
+[data-theme="electric-blue"] main input::placeholder,
+[data-theme="electric-blue"] main textarea::placeholder,
+[data-theme="navy-teal"] main input::placeholder,
+[data-theme="navy-teal"] main textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+/* -------------------------------------------------------------------------
+   HEADER & NAVBAR DYNAMIC THEME STYLING
+------------------------------------------------------------------------- */
+header {
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+[data-theme="electric-blue"] header,
+.theme-electric-blue header {
+  background: linear-gradient(180deg, rgba(10, 22, 45, 0.98) 0%, rgba(15, 28, 56, 0.95) 100%) !important;
+  border-bottom: 2px solid #2563EB !important;
+  box-shadow: 0 4px 25px rgba(37, 99, 235, 0.35) !important;
+}
+
+[data-theme="black-gold"] header,
+.theme-black-gold header {
+  background: linear-gradient(180deg, rgba(16, 14, 10, 0.98) 0%, rgba(10, 9, 7, 0.96) 100%) !important;
+  border-bottom: 2px solid #EAB308 !important;
+  box-shadow: 0 4px 25px rgba(234, 179, 8, 0.35) !important;
+}
+
+[data-theme="charcoal-red"] header,
+.theme-charcoal-red header {
+  background: linear-gradient(180deg, rgba(18, 16, 20, 0.98) 0%, rgba(12, 12, 14, 0.96) 100%) !important;
+  border-bottom: 2px solid #D91424 !important;
+  box-shadow: 0 4px 25px rgba(217, 20, 36, 0.35) !important;
+}
+
+[data-theme="navy-teal"] header,
+.theme-navy-teal header {
+  background: linear-gradient(180deg, rgba(8, 28, 44, 0.98) 0%, rgba(12, 36, 56, 0.95) 100%) !important;
+  border-bottom: 2px solid #0D9488 !important;
+  box-shadow: 0 4px 25px rgba(13, 148, 136, 0.35) !important;
+}
+
+/* Footer border & contrast */
+[data-theme="electric-blue"] footer {
+  background-color: #0A162D !important;
+  border-top: 2px solid rgba(37, 99, 235, 0.4) !important;
+}
+
+[data-theme="black-gold"] footer {
+  background-color: #0E0C08 !important;
+  border-top: 2px solid rgba(234, 179, 8, 0.4) !important;
+}
+
+[data-theme="charcoal-red"] footer {
+  background-color: #0E0E12 !important;
+  border-top: 2px solid rgba(217, 20, 36, 0.4) !important;
+}
+
+[data-theme="navy-teal"] footer {
+  background-color: #081C2C !important;
+  border-top: 2px solid rgba(13, 148, 136, 0.4) !important;
+}
+
+/* Ensure buttons always have white text in electric blue, teal, or red themes */
+[data-theme="electric-blue"] button.bg-crimson,
+[data-theme="electric-blue"] a.bg-crimson,
+[data-theme="navy-teal"] button.bg-crimson,
+[data-theme="navy-teal"] a.bg-crimson,
+[data-theme="charcoal-red"] button.bg-crimson,
+[data-theme="charcoal-red"] a.bg-crimson {
+  color: #FFFFFF !important;
+}
+
+/* In Black & Gold theme, buttons have bold dark onyx text for ultra-crisp contrast */
+[data-theme="black-gold"] button.bg-crimson,
+[data-theme="black-gold"] a.bg-crimson {
+  color: #09090B !important;
+  font-weight: 800 !important;
+}
+
+/* Selection colors */
+::selection {
+  background-color: rgb(var(--color-primary-rgb));
+  color: #FFFFFF;
+}
+
+@layer utilities {
+  .clip-slant-white {
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+  }
+  .clip-hud-trapezoid {
+    clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+  }
+  .clip-diag-slash-panel {
+    clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+  }
+  .text-metallic-silver {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(130, 130, 145, 0.08) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Pulse Keyframes */
+@keyframes pulseRing {
+  0% { transform: scale(0.85); opacity: 0.95; }
+  50% { transform: scale(1.8); opacity: 0; }
+  100% { transform: scale(0.85); opacity: 0.95; }
+}
+
+.ping-hotspot {
+  animation: pulseRing 2s cubic-bezier(0.1, 0.2, 0.3, 1) infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-header-footer-rgb));
+}
+::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-primary-rgb));
+}

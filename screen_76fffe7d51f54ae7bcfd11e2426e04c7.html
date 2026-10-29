@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>APEX STUDIO | Ultra-Luxury Automotive Styling &amp; Protection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#08080A',
+            carbon: '#121216',
+            crimson: '#D91424',
+            alabaster: '#F4F4F6',
+            midnight: '#0D1117',
+            silver: '#9E9EA9'
+          },
+          fontFamily: {
+            display: ['Orbitron', 'Space Grotesk', 'sans-serif'],
+            mono: ['Space Mono', 'monospace'],
+            body: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+          },
+          boxShadow: {
+            'glow-red': '0 0 35px rgba(217, 20, 36, 0.45)',
+            'glow-red-lg': '0 0 60px rgba(217, 20, 36, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Custom clip geometries from layout image */
+    .clip-slant-white {
+      clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+    }
+    .clip-hud-trapezoid {
+      clip-path: polygon(6% 0%, 94% 0%, 100% 100%, 0% 100%);
+    }
+    .clip-diag-slash-panel {
+      clip-path: polygon(25% 0, 100% 0, 75% 100%, 0 100%);
+    }
+    .text-metallic-silver {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.35) 0%, rgba(130, 130, 145, 0.08) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    /* Pulse Keyframes */
+    @keyframes pulseRing {
+      0% { transform: scale(0.85); opacity: 0.95; }
+      50% { transform: scale(1.8); opacity: 0; }
+      100% { transform: scale(0.85); opacity: 0.95; }
+    }
+    .ping-hotspot {
+      animation: pulseRing 2s cubic-bezier(0.1, 0.2, 0.3, 1) infinite;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-white font-body antialiased selection:bg-crimson selection:text-white overflow-x-hidden">
+<!-- ======================================================== -->
+<!-- 1. GLOBAL NAVBAR (Sticky Glassmorphic Bar)               -->
+<!-- ======================================================== -->
+<header class="fixed top-0 left-0 right-0 z-50 w-full backdrop-blur-2xl bg-obsidian/75 border-b border-white/[0.08] transition-all duration-300">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group focus:outline-none" href="#hero">
+<div class="relative w-9 h-9 flex items-center justify-center bg-carbon/90 border border-crimson/50 rounded group-hover:border-crimson shadow-[0_0_15px_rgba(217,20,36,0.35)] transition-all">
+<svg class="w-6 h-6" fill="none" viewbox="0 0 36 36">
+<path d="M7 29L18 7L29 29H22L18 20L14 29H7Z" fill="#D91424"></path>
+<path d="M18 17L22 7L31 7L26 17H18Z" fill="#FFFFFF" fill-opacity="0.9"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-display font-black text-lg tracking-[0.24em] text-white leading-none">APEX</span>
+<span class="font-mono text-[8px] font-bold tracking-[0.35em] text-silver text-crimson uppercase mt-1">STUDIO</span>
+</div>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden lg:flex items-center gap-2 xl:gap-3 text-[11px] font-display font-bold tracking-[0.2em] uppercase">
+<a class="px-3 py-2 text-white relative transition-colors" href="#hero">
+<span>HOME</span>
+<span class="absolute bottom-0 left-3 right-3 h-[2px] bg-crimson shadow-[0_0_10px_#D91424]"></span>
+</a>
+<!-- Services with Mega Menu -->
+<div class="relative group">
+<button class="flex items-center gap-1 px-3 py-2 text-silver hover:text-white transition-colors focus:outline-none">
+<span>SERVICES</span>
+<span class="material-symbols-outlined text-sm text-crimson group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="absolute top-full left-1/2 -translate-x-1/2 w-[680px] pt-4 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-all duration-300 transform -translate-y-2 group-hover:translate-y-0">
+<div class="bg-carbon/95 backdrop-blur-2xl border border-white/10 rounded-xl p-5 shadow-2xl">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10 text-[10px] font-mono text-silver">
+<span>02-06, 12 PILLARS ARCHITECTURE</span>
+<a class="text-crimson hover:underline font-bold" href="#bento">VIEW ALL HUBS →</a>
+</div>
+<div class="grid grid-cols-2 gap-3 text-left">
+<a class="p-3 rounded-lg bg-obsidian/70 border border-white/5 hover:border-crimson/50 transition-all" href="#tinting">
+<span class="text-crimson font-mono text-xs font-bold">01</span>
+<h4 class="text-xs font-display font-bold text-white mt-0.5">Nano-Ceramic Window Tint</h4>
+<p class="text-[11px] text-silver font-body font-normal lowercase tracking-normal mt-0.5">99% uv radiation block, solar heat shield</p>
+</a>
+<a class="p-3 rounded-lg bg-obsidian/70 border border-white/5 hover:border-crimson/50 transition-all" href="#coating">
+<span class="text-crimson font-mono text-xs font-bold">02</span>
+<h4 class="text-xs font-display font-bold text-white mt-0.5">10H Graphene Ceramic Coating</h4>
+<p class="text-[11px] text-silver font-body font-normal lowercase tracking-normal mt-0.5">Covalent liquid glass 115° water beading</p>
+</a>
+<a class="p-3 rounded-lg bg-obsidian/70 border border-white/5 hover:border-crimson/50 transition-all" href="#ppf">
+<span class="text-crimson font-mono text-xs font-bold">03</span>
+<h4 class="text-xs font-display font-bold text-white mt-0.5">PPF &amp; Stealth Vinyl Armor</h4>
+<p class="text-[11px] text-silver font-body font-normal lowercase tracking-normal mt-0.5">Self-healing 8.5-mil high impact wrap</p>
+</a>
+<a class="p-3 rounded-lg bg-obsidian/70 border border-white/5 hover:border-crimson/50 transition-all" href="#custom-paint">
+<span class="text-crimson font-mono text-xs font-bold">04</span>
+<h4 class="text-xs font-display font-bold text-white mt-0.5">OEM+ Custom Paint Booth</h4>
+<p class="text-[11px] text-silver font-body font-normal lowercase tracking-normal mt-0.5">Pressurized concourse caliper &amp; respray</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<a class="flex items-center gap-1.5 px-3 py-2 text-silver hover:text-white transition-colors" href="#simulator">
+<span>SIMULATOR</span>
+<span class="text-[9px] px-1.5 py-0.5 rounded bg-crimson/20 border border-crimson/50 text-crimson font-mono font-bold animate-pulse">LIVE 2D</span>
+</a>
+<a class="px-3 py-2 text-silver hover:text-white transition-colors" href="#packages">
+          PACKAGES
+        </a>
+<a class="px-3 py-2 text-silver hover:text-white transition-colors" href="#videos">
+          PORTFOLIO
+        </a>
+<a class="px-3 py-2 text-silver hover:text-white transition-colors" href="#quote-footer">
+          CONTACT
+        </a>
+</nav>
+<!-- Right Buttons -->
+<div class="flex items-center gap-3">
+<a class="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-bold text-silver hover:text-white px-3 py-2 rounded border border-white/10 bg-carbon/80" href="#sitemap">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+<span>ALL 16 PAGES</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-2.5 bg-crimson hover:bg-crimson/90 text-white font-display font-bold text-xs tracking-widest uppercase transition-all shadow-glow-red rounded-sm" href="#quote-footer">
+          BOOK STUDIO
+        </a>
+</div>
+</div>
+</header>
+<!-- ======================================================== -->
+<!-- SCENE 1: HERO SECTION (Full Bleed Background + Telemetry)  -->
+<!-- ======================================================== -->
+<section class="relative w-full min-h-screen pt-20 flex flex-col justify-between overflow-hidden bg-obsidian" id="hero">
+<!-- Full-bleed 100vw Background using IMAGE_3 seamlessly with no border -->
+<div class="absolute inset-0 z-0 w-full h-full overflow-hidden pointer-events-none">
+<img alt="Apex Studio Hypercar Environment" class="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.05]" src="https://lh3.googleusercontent.com/aida/AEtjO1UMFgI4ut0-uzM2YcE3zB37Gs24xot1eXIgUW3XI7fq5CbDgs8a9SwoL4MSoesFOqyfTYRdeDQAdhP9CoqtP1ki2d9HWSAXegJHFqd-lxjNjzZ3a3MAuIDNT08ymnQalOqCeUqI6jO_V-hzart5uXHg_ga3bWfuOpFZUJoKFSORRv8EV-P4dCWfQURfD3vhdU4SlT8hu3lzWVoXufVe6ChxGT13hZbUfftfpBd4el6nYYV5LRjqeY3G4hY"/>
+<!-- Seamless Studio Vignette Overlays -->
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/80"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-obsidian/70 via-transparent to-obsidian/70"></div>
+</div>
+<!-- Giant Metallic Uppercase Watermark Text 'OBSIDIAN' -->
+<div class="absolute top-[28%] left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none z-10 w-full text-center">
+<span class="font-display font-black text-[15vw] sm:text-[14vw] tracking-[0.16em] uppercase text-metallic-silver leading-none block drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
+        OBSIDIAN
+      </span>
+</div>
+<!-- Arching Glowing Crimson HUD Semi-Circular Arc + 4 Pulsing Hotspots -->
+<div class="relative z-20 w-full max-w-5xl mx-auto flex-1 flex flex-col justify-center items-center px-4 mt-8 sm:mt-4 min-h-[460px]">
+<!-- Central Arc SVG Canvas Over Car -->
+<div class="relative w-full max-w-[860px] aspect-[16/9] flex items-center justify-center">
+<svg class="absolute inset-0 w-full h-full pointer-events-none z-10" fill="none" viewbox="0 0 900 480">
+<!-- Radial Red Glow Filters -->
+<defs>
+<filter height="140%" id="crimsonGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="8"></fegaussianblur>
+<femerge>
+<femergenode in="blur"></femergenode>
+<femergenode in="blur"></femergenode>
+<femergenode in="SourceGraphic"></femergenode>
+</femerge>
+</filter>
+</defs>
+<!-- Outer Neon Crimson Arc -->
+<path d="M 170 380 A 330 240 0 0 1 730 380" filter="url(#crimsonGlow)" stroke="#D91424" stroke-linecap="round" stroke-width="3"></path>
+<path d="M 170 380 A 330 240 0 0 1 730 380" stroke="#FFFFFF" stroke-dasharray="4 12" stroke-linecap="round" stroke-width="1.2"></path>
+<!-- Subtle Reference Grid Lines -->
+<line stroke="rgba(255,255,255,0.2)" stroke-dasharray="2 4" x1="240" x2="310" y1="210" y2="210"></line>
+<line stroke="rgba(255,255,255,0.2)" stroke-dasharray="2 4" x1="600" x2="680" y1="210" y2="210"></line>
+</svg>
+<!-- Hotspot 1: TINT (Left side glass) -->
+<div class="absolute top-[48%] left-[23%] z-30 -translate-x-1/2 -translate-y-1/2 group">
+<button class="relative flex items-center justify-center w-8 h-8 focus:outline-none" onclick="updateHeroSpec('TINT', '99% UV &amp; 96% Solar IR Rejection nano-ceramic barrier with scratch-resistant hardcoat.')">
+<span class="ping-hotspot absolute w-full h-full rounded-full bg-crimson opacity-80"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-crimson border-2 border-white shadow-[0_0_12px_#D91424]"></span>
+</button>
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 font-display text-[10px] font-bold tracking-widest text-white uppercase bg-black/80 px-2 py-0.5 rounded border border-white/20">
+            TINT
+          </span>
+</div>
+<!-- Hotspot 2: COATING (Top Left Arc) -->
+<div class="absolute top-[21%] left-[39%] z-30 -translate-x-1/2 -translate-y-1/2 group">
+<button class="relative flex items-center justify-center w-8 h-8 focus:outline-none" onclick="updateHeroSpec('COATING', '10H Graphene Dual-Layer molecular liquid glass with 115° contact water beading.')">
+<span class="ping-hotspot absolute w-full h-full rounded-full bg-crimson opacity-80"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-crimson border-2 border-white shadow-[0_0_12px_#D91424]"></span>
+</button>
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 font-display text-[10px] font-bold tracking-widest text-white uppercase bg-black/80 px-2 py-0.5 rounded border border-white/20">
+            COATING
+          </span>
+</div>
+<!-- Hotspot 3: PPF with Floating Spec Card (Top Right Arc) as in Ref Image -->
+<div class="absolute top-[23%] left-[64%] z-30 -translate-x-1/2 -translate-y-1/2 group">
+<button class="relative flex items-center justify-center w-8 h-8 focus:outline-none" onclick="updateHeroSpec('PPF', 'Nanomorphic Spec: 8Mil front impact protection with thermal self-healing recovery.')">
+<span class="ping-hotspot absolute w-full h-full rounded-full bg-crimson opacity-80"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-crimson border-2 border-white shadow-[0_0_12px_#D91424]"></span>
+</button>
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 font-display text-[10px] font-bold tracking-widest text-white uppercase bg-black/80 px-2 py-0.5 rounded border border-white/20">
+            PPF
+          </span>
+<!-- Floating Glassmorphic Spec Card -->
+<div class="absolute -top-16 -right-36 sm:-right-48 w-44 sm:w-52 p-2.5 rounded bg-black/85 border border-white/20 backdrop-blur-md shadow-2xl pointer-events-none text-left">
+<div class="text-[9px] font-mono text-crimson font-bold uppercase tracking-wider flex items-center justify-between">
+<span>Nanomorphic Spec</span>
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<p class="text-[10px] text-neutral-300 font-body leading-tight mt-1">
+              8Mil front impact protection &amp; scratch self-healing.
+            </p>
+</div>
+</div>
+<!-- Hotspot 4: CUSTOM PAINT (Right rear / caliper) -->
+<div class="absolute top-[42%] left-[78%] z-30 -translate-x-1/2 -translate-y-1/2 group">
+<button class="relative flex items-center justify-center w-8 h-8 focus:outline-none" onclick="updateHeroSpec('CUSTOM PAINT', 'OEM+ multi-stage concourse paint resprays and high-temperature Brembo caliper refinishing.')">
+<span class="ping-hotspot absolute w-full h-full rounded-full bg-crimson opacity-80"></span>
+<span class="relative w-3.5 h-3.5 rounded-full bg-crimson border-2 border-white shadow-[0_0_12px_#D91424]"></span>
+</button>
+<span class="absolute -top-7 left-1/2 -translate-x-1/2 font-display text-[10px] font-bold tracking-widest text-white uppercase bg-black/80 px-2 py-0.5 rounded border border-white/20 whitespace-nowrap">
+            CUSTOM PAINT
+          </span>
+<div class="hidden sm:block absolute -bottom-10 left-1/2 -translate-x-1/2 text-[9px] font-mono text-silver/80 whitespace-nowrap">
+            • Caliper Ceramic Coating
+          </div>
+</div>
+</div>
+</div>
+<!-- Anchored Trapezoidal HUD Telemetry Dock with 3 Horizontal Progress Bars -->
+<div class="relative z-30 w-full max-w-4xl mx-auto px-4 pb-6">
+<div class="bg-carbon/90 border border-white/10 backdrop-blur-2xl rounded-2xl p-4 sm:px-8 sm:py-5 shadow-2xl shadow-black">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+<!-- Metric 1: 99% UV BLOCK -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-display font-black text-sm tracking-wider text-white">99% <span class="text-xs text-silver font-normal">UV BLOCK</span></span>
+<span class="font-mono text-[9px] text-emerald-400 font-bold">CALIBRATED</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-crimson h-full w-[99%] shadow-[0_0_8px_#D91424]"></div>
+</div>
+<div class="flex justify-between text-[8px] font-mono text-silver/60 mt-1">
+<span>0%</span>
+<span>50%</span>
+<span>100%</span>
+</div>
+</div>
+<!-- Metric 2: 10H GRAPHENE COATING -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-display font-black text-sm tracking-wider text-white">10H <span class="text-xs text-silver font-normal">GRAPHENE COATING</span></span>
+<span class="font-mono text-[9px] text-crimson font-bold">CERTIFIED</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-crimson h-full w-[100%] shadow-[0_0_8px_#D91424]"></div>
+</div>
+<div class="flex justify-between text-[8px] font-mono text-silver/60 mt-1">
+<span>9H HARDNESS</span>
+<span>10H DIAMOND</span>
+</div>
+</div>
+<!-- Metric 3: SELF-HEALING PPF -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-display font-black text-sm tracking-wider text-white">SELF-HEALING <span class="text-xs text-silver font-normal">PPF</span></span>
+<span class="font-mono text-[9px] text-white font-bold">8.5 MIL</span>
+</div>
+<div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-crimson h-full w-[94%] shadow-[0_0_8px_#D91424]"></div>
+</div>
+<div class="flex justify-between text-[8px] font-mono text-silver/60 mt-1">
+<span>TRACK SHIELD</span>
+<span>10-YR GUARANTEE</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 2: TIERED PROTECTION PLANS (Diagonal Stark White)  -->
+<!-- ======================================================== -->
+<section class="relative py-28 bg-alabaster text-obsidian clip-slant-white z-20" id="packages">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pt-4 pb-4">
+<!-- Section Header Matching Reference Image -->
+<div class="text-center max-w-3xl mx-auto mb-10">
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">
+          &lt; TIERED AUTOMOTIVE PROTECTION
+        </span>
+<h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-tight text-obsidian mt-2">
+          FIND THE PROTECTION PLAN BUILT FOR YOUR CAR
+        </h2>
+<p class="text-xs sm:text-sm text-neutral-600 mt-2 font-medium">
+          Laser-plotted optical heat barriers, sacrificial impact films, and covalent liquid glass finishes.
+        </p>
+<!-- Interactive Vehicle Class Tabs: [Sports] [Sedan] [SUV] [Exotic] -->
+<div class="inline-flex items-center justify-center gap-1.5 p-1 mt-6 rounded-lg bg-neutral-200 border border-neutral-300">
+<button class="price-tab-btn px-4 py-1.5 text-xs font-display font-bold rounded bg-obsidian text-white shadow-sm transition-all" onclick="setPricingClass('Sports', 1.0)">Sports</button>
+<button class="price-tab-btn px-4 py-1.5 text-xs font-display font-bold text-neutral-700 hover:text-black rounded transition-all" onclick="setPricingClass('Sedan', 1.15)">Sedan</button>
+<button class="price-tab-btn px-4 py-1.5 text-xs font-display font-bold text-neutral-700 hover:text-black rounded transition-all" onclick="setPricingClass('SUV', 1.3)">SUV</button>
+<button class="price-tab-btn px-4 py-1.5 text-xs font-display font-bold text-neutral-700 hover:text-black rounded transition-all" onclick="setPricingClass('Exotic', 1.5)">Exotic</button>
+</div>
+</div>
+<!-- 3 Floating Pricing Cards -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch max-w-6xl mx-auto">
+<!-- Left: ESSENTIAL SHIELD ($499) -->
+<div class="bg-white border border-neutral-300/80 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between">
+<div>
+<div class="text-[10px] font-mono font-bold tracking-widest text-neutral-400 uppercase">STAGE 01 • ENTRY LEVEL</div>
+<h3 class="font-display font-black text-xl uppercase tracking-wider text-obsidian mt-1">ESSENTIAL SHIELD</h3>
+<p class="text-xs text-neutral-500 mt-2 leading-relaxed">High-grade nano-ceramic tint package providing solar IR mitigation &amp; daily clearcoat protection.</p>
+<div class="my-6 pt-4 border-t border-neutral-200 flex items-baseline gap-2">
+<span class="font-display font-black text-4xl text-obsidian" id="priceCard1">$499</span>
+<span class="text-xs text-neutral-500 font-mono font-medium">/ complete vehicle</span>
+</div>
+<ul class="space-y-3 text-xs text-neutral-700 font-medium">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>Full Nano-Ceramic Window Tint (All Sides &amp; Rear)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>Single-Stage Paint Decontamination &amp; Gloss Polish</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>2-Year Certified Hydrophobic Topcoat Seal</span>
+</li>
+<li class="flex items-center gap-2.5 text-neutral-400 line-through">
+<span class="material-symbols-outlined text-base text-neutral-300">close</span>
+<span>Front High-Impact Self-Healing PPF</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 w-full py-3 text-center border-2 border-obsidian text-obsidian hover:bg-obsidian hover:text-white font-display font-bold text-xs uppercase tracking-wider rounded transition-colors" href="#quote-footer">
+            SELECT PLAN
+          </a>
+</div>
+<!-- Center: Elevated Obsidian Black #0C0C10 card with Crimson neon border & MOST POPULAR badge -->
+<div class="relative bg-[#0C0C10] text-white rounded-2xl p-6 sm:p-8 shadow-2xl shadow-black/50 border-2 border-crimson transform lg:-translate-y-4 flex flex-col justify-between">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-crimson text-white px-4 py-1 rounded-full text-[10px] font-display font-black tracking-widest uppercase shadow-glow-red">
+            MOST POPULAR
+          </div>
+<div>
+<div class="text-[10px] font-mono font-bold tracking-widest text-crimson uppercase">STAGE 02 • COMPREHENSIVE ARMOR</div>
+<h3 class="font-display font-black text-2xl uppercase tracking-wider text-white mt-1">TRACK &amp; GLOSS PRO</h3>
+<p class="text-xs text-silver mt-2 leading-relaxed">Integrated track package shielding impact zones with PPF and coating paintwork in certified liquid glass.</p>
+<div class="my-6 pt-4 border-t border-white/10 flex items-baseline gap-2">
+<span class="font-display font-black text-5xl text-white" id="priceCard2">$1,299</span>
+<span class="text-xs text-silver font-mono font-medium">/ complete vehicle</span>
+</div>
+<ul class="space-y-3 text-xs text-neutral-200">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-crimson">check_circle</span>
+<span>Full Ceramic Solar IR Tint (Windshield Included)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-crimson">check_circle</span>
+<span>Front Track Pack 8.5-Mil PPF (Bumper, Hood, Fenders, Mirrors)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-crimson">check_circle</span>
+<span>5-Year Certified 9H Liquid Glass Ceramic Shield</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-crimson">check_circle</span>
+<span>Ultra-Hydrophobic Wheel &amp; Brembo Caliper Ceramic Coating</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 w-full py-3.5 text-center bg-crimson hover:bg-crimson/90 text-white font-display font-black text-xs uppercase tracking-widest rounded shadow-glow-red transition-all" href="#quote-footer">
+            SELECT PLAN
+          </a>
+</div>
+<!-- Right: BESPOKE CONCOURSE ($2,899) -->
+<div class="bg-white border border-neutral-300/80 rounded-2xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all flex flex-col justify-between">
+<div>
+<div class="text-[10px] font-mono font-bold tracking-widest text-neutral-400 uppercase">STAGE 03 • CONCOURSE LEVEL</div>
+<h3 class="font-display font-black text-xl uppercase tracking-wider text-obsidian mt-1">BESPOKE CONCOURSE</h3>
+<p class="text-xs text-neutral-500 mt-2 leading-relaxed">Full-body automotive wrapping and dual-layer coating, PPF wrap, and custom paintwork enhancements.</p>
+<div class="my-6 pt-4 border-t border-neutral-200 flex items-baseline gap-2">
+<span class="font-display font-black text-4xl text-obsidian" id="priceCard3">$2,899</span>
+<span class="text-xs text-neutral-500 font-mono font-medium">/ complete vehicle</span>
+</div>
+<ul class="space-y-3 text-xs text-neutral-700 font-medium">
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>Full-Body Stealth Matte or Mirror Ultra-Gloss 8.5-Mil PPF Wrap</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>10H Graphene Dual-Layer Coating (10-Year Warranty)</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>Multi-Stage Paint Correction + Custom Accent Respray</span>
+</li>
+<li class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-base text-emerald-600">check</span>
+<span>Interior Alcantara &amp; Fine Leather Hydrophobic Shield</span>
+</li>
+</ul>
+</div>
+<a class="mt-8 w-full py-3 text-center border-2 border-obsidian text-obsidian hover:bg-obsidian hover:text-white font-display font-bold text-xs uppercase tracking-wider rounded transition-colors" href="#quote-footer">
+            SELECT PLAN
+          </a>
+</div>
+</div>
+<!-- Centered solid crimson CTA -->
+<div class="text-center mt-12">
+<a class="inline-flex items-center gap-2 px-8 py-3.5 rounded bg-crimson text-white font-display font-bold text-xs uppercase tracking-widest shadow-glow-red hover:bg-crimson/90 transition-all" href="#simulator">
+<span>BUILD CUSTOM MULTI-SERVICE PACKAGE</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 3: INTERACTIVE 4-PILLAR VISUALIZER (Red Diagonal Slash) -->
+<!-- ======================================================== -->
+<section class="relative py-24 bg-[#08080A] text-white overflow-hidden" id="simulator">
+<!-- Wide Vibrant Crimson Red Diagonal Ribbon Slash (#D91424) as seen in Reference Image -->
+<div class="absolute inset-y-0 left-[28%] w-[38%] bg-crimson clip-diag-slash-panel opacity-95 pointer-events-none transform -skew-x-12 hidden lg:block shadow-[0_0_90px_rgba(217,20,36,0.5)]"></div>
+<div class="max-w-[1440px] mx-auto px-4 sm:px-8 relative z-10">
+<!-- Section Title & Live Engine Badge -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+<div>
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">
+            REAL-TIME TELEMETRY ENGINE
+          </span>
+<h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-wider text-white mt-1">
+            INTERACTIVE 4-PILLAR VISUALIZER
+          </h2>
+<p class="text-xs text-silver mt-1 max-w-lg">
+            Configurable photorealistic hardware view. Adjust tint darkness and view real-time changes to ambient heat opacity and spec sheet factors.
+          </p>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-carbon border border-white/10 text-xs font-mono">
+<span class="w-2.5 h-2.5 rounded-full bg-crimson animate-ping"></span>
+<span class="text-neutral-300 font-bold">LIVE RENDER ENGINE ACTIVE</span>
+</div>
+</div>
+<!-- Configurator Grid: Left Supercar Preview, Right Dual Glassmorphic Panels -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<!-- Left: Full-bleed Supercar Preview using IMAGE_6 -->
+<div class="lg:col-span-7 relative flex flex-col items-center justify-center">
+<div class="relative w-full aspect-[16/9] sm:aspect-[21/9] flex items-center justify-center overflow-hidden rounded-2xl bg-obsidian/90 border border-white/10 shadow-2xl">
+<!-- Dynamic Floor Reflection Glow -->
+<div class="absolute bottom-0 inset-x-0 h-28 bg-crimson/20 blur-3xl pointer-events-none transition-all duration-500" id="simFloorGlow"></div>
+<!-- Car Profile Render (IMAGE_6) -->
+<img alt="Apex Simulator Supercar" class="relative z-10 w-full h-full object-cover object-center filter transition-all duration-500" id="simCarProfile" src="https://lh3.googleusercontent.com/aida/AEtjO1WHY7DuNOlB-rhBV6puWjadgEBVtzHRg96dNAkR1n4e_D3D1jo7pw2nmPDzq846h9BIhi7igLK16d8xVHvVh7Ruf9yH-rPbE7Ak7YYBqE2DV7554SOniAT-MU1D3JrN_1Ohm28dmGPZ-kvGoAKT9ZLjRQ26ioU8mzxtVS-bQ8VkgY-p3hGkzwYHZsB0390kwFB3lGtkBvXrsH_wB5LUKXXI2ISWKrhGa4euT3jnvDq-89niVsH9zuXSxJl5"/>
+<!-- Dynamic Window Tint Simulation Layer -->
+<div class="absolute top-[28%] left-[45%] w-[18%] h-[11%] bg-black/60 rounded-sm pointer-events-none z-20 transition-all duration-300 backdrop-blur-[0.5px]" id="simWindowTintMask"></div>
+<!-- Dynamic Ceramic Shimmer -->
+<div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent opacity-0 pointer-events-none z-20 transition-opacity duration-500" id="simCeramicShimmer"></div>
+<!-- Overlay HUD watermark -->
+<div class="absolute top-4 left-5 z-20 flex items-center gap-2 text-[10px] font-mono text-silver bg-black/60 px-2.5 py-1 rounded border border-white/10">
+<span class="text-crimson font-bold">APEX GT-R</span>
+<span>•</span>
+<span id="simVltIndicatorText">20% DARK TINT</span>
+</div>
+</div>
+</div>
+<!-- Right: Dual Glassmorphic Control Panels Matching Reference Image -->
+<div class="lg:col-span-5 space-y-4">
+<!-- Panel 1: SIMULATOR CONTROLS -->
+<div class="bg-carbon/90 border border-white/15 rounded-2xl p-5 backdrop-blur-xl shadow-2xl">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-white/10">
+<span class="font-display font-bold text-xs tracking-wider uppercase text-white flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-crimson"></span>
+                SIMULATOR
+              </span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-8 h-4 bg-neutral-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-crimson"></div>
+</label>
+</div>
+<!-- VLT% Dual Slider Selector -->
+<div class="mb-4">
+<div class="flex justify-between text-[11px] font-mono mb-1.5">
+<span class="text-silver uppercase font-bold">VLT % (TINT DARKNESS)</span>
+<span class="text-crimson font-bold" id="vltValueLabel">20% VLT</span>
+</div>
+<input class="w-full accent-crimson cursor-pointer bg-white/20 h-1 rounded-lg" id="vltSlider" max="70" min="5" oninput="handleVltChange(this.value)" step="5" type="range" value="20"/>
+<div class="flex justify-between text-[9px] font-mono text-silver/60 mt-1">
+<span>5% Limo</span>
+<span>20%</span>
+<span>35%</span>
+<span>50%</span>
+<span>70% Clear</span>
+</div>
+</div>
+<!-- Paint & Finish Swatches (Row 1: Colors, Row 2: Stealth Satin & PPF) -->
+<div class="mb-4">
+<span class="block text-[10px] font-mono uppercase tracking-wider text-silver mb-2 font-bold">Paint &amp; Finish</span>
+<!-- Row 1: Primary Colors -->
+<div class="grid grid-cols-6 gap-2 mb-2">
+<button class="h-6 rounded bg-[#D91424] border border-white/40 ring-2 ring-crimson" onclick="setCarFilter('crimson', 'hue-rotate(0deg)')" title="Crimson Red"></button>
+<button class="h-6 rounded bg-[#101012] border border-white/20 hover:border-white" onclick="setCarFilter('obsidian', 'grayscale(100%) brightness(60%)')" title="Obsidian Black"></button>
+<button class="h-6 rounded bg-[#8A8D91] border border-white/20 hover:border-white" onclick="setCarFilter('nardo', 'grayscale(80%) brightness(110%)')" title="Nardo Grey"></button>
+<button class="h-6 rounded bg-[#0A4D94] border border-white/20 hover:border-white" onclick="setCarFilter('cobalt', 'hue-rotate(210deg) saturate(140%)')" title="Cobalt Blue"></button>
+<button class="h-6 rounded bg-[#E5A812] border border-white/20 hover:border-white" onclick="setCarFilter('solar', 'hue-rotate(45deg) saturate(160%)')" title="Solar Yellow"></button>
+<button class="h-6 rounded bg-[#682082] border border-white/20 hover:border-white" onclick="setCarFilter('ultraviolet', 'hue-rotate(270deg) saturate(150%)')" title="Ultraviolet"></button>
+</div>
+<!-- Row 2: Stealth Satin & Metallic PPF Swatches -->
+<div class="grid grid-cols-6 gap-2">
+<button class="h-6 rounded bg-[#1F1F24] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('matte-black', 'contrast(120%) brightness(70%)')" title="Stealth Matte Black">MATTE</button>
+<button class="h-6 rounded bg-[#4B4E54] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('satin-grey', 'grayscale(90%) contrast(110%)')" title="Satin Grey">SATIN</button>
+<button class="h-6 rounded bg-[#A6ACB5] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('frozen-silver', 'brightness(130%) contrast(95%)')" title="Frozen Silver">FROZ</button>
+<button class="h-6 rounded bg-[#18181A] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('carbon', 'contrast(130%) brightness(75%)')" title="Raw Carbon Fiber">CARB</button>
+<button class="h-6 rounded bg-[#EDE8EA] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('pearl', 'brightness(140%) contrast(85%)')" title="Bespoke Pearl">PEARL</button>
+<button class="h-6 rounded bg-[#B50014] border border-white/20 hover:border-white flex items-center justify-center text-[7px] font-mono" onclick="setCarFilter('candy', 'saturate(200%) contrast(110%)')" title="Candy Gloss">CANDY</button>
+</div>
+</div>
+<!-- 10H Ceramic Boost Toggle -->
+<div class="flex items-center justify-between p-2.5 rounded bg-black/40 border border-white/10">
+<span class="text-xs font-display font-bold uppercase text-white">10H Ceramic Gloss Boost</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="glossBoostCheck" onchange="toggleGlossBoost(this)" type="checkbox"/>
+<div class="w-8 h-4 bg-neutral-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-crimson"></div>
+</label>
+</div>
+</div>
+<!-- Panel 2: LIVE TECHNICAL SPEC SHEET -->
+<div class="bg-carbon/90 border border-white/15 rounded-2xl p-5 backdrop-blur-xl shadow-2xl">
+<div class="flex items-center justify-between pb-3 mb-3 border-b border-white/10">
+<span class="font-display font-bold text-xs tracking-wider uppercase text-white">
+                LIVE TECHNICAL SPEC
+              </span>
+<!-- Vehicle Class Toggle -->
+<div class="flex items-center gap-1 p-0.5 rounded bg-black/60 border border-white/10 text-[9px] font-mono">
+<button class="spec-class-btn px-2 py-0.5 rounded bg-crimson text-white font-bold" onclick="setSpecClass('Sports')">Sports</button>
+<button class="spec-class-btn px-2 py-0.5 rounded text-silver hover:text-white" onclick="setSpecClass('Sedan')">Sedan</button>
+<button class="spec-class-btn px-2 py-0.5 rounded text-silver hover:text-white" onclick="setSpecClass('SUV')">SUV</button>
+</div>
+</div>
+<div class="space-y-2 text-xs font-mono">
+<div class="flex justify-between py-1 border-b border-white/5">
+<span class="text-silver">Solar IR Heat Rejection</span>
+<span class="text-emerald-400 font-bold" id="specIrVal">96.4%</span>
+</div>
+<div class="flex justify-between py-1 border-b border-white/5">
+<span class="text-silver">Specular Gloss Units</span>
+<span class="text-white font-bold" id="specGuVal">94.8 GU</span>
+</div>
+<div class="flex justify-between py-1 border-b border-white/5">
+<span class="text-silver">Hydrophobic Beading Angle</span>
+<span class="text-cyan-400 font-bold" id="specBeadingVal">115°</span>
+</div>
+<div class="flex justify-between py-1 border-b border-white/5">
+<span class="text-silver">Total Film Thickness</span>
+<span class="text-white font-bold" id="specThicknessVal">8.5 Mil (215µ)</span>
+</div>
+<div class="flex justify-between py-1 border-b border-white/5">
+<span class="text-silver">ASTM Pencil Hardness</span>
+<span class="text-crimson font-bold">Certified 10H ASTM</span>
+</div>
+</div>
+<!-- Download Button -->
+<button class="mt-4 w-full py-2.5 bg-crimson hover:bg-crimson/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded shadow-glow-red transition-all" onclick="alert('APEX STUDIO: Generating certified ISO-9001 technical vehicle telemetry spec sheet...')">
+              Download Full Spec Sheet
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 4: 4 CORE PILLARS BENTO GRID                      -->
+<!-- ======================================================== -->
+<section class="py-24 bg-obsidian border-t border-white/10 text-white" id="bento">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">4 CORE PILLARS</span>
+<h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-wider text-white mt-1">
+            BESPOKE STYLING ARCHITECTURE
+          </h2>
+</div>
+<p class="text-xs text-silver mt-2 md:mt-0 max-w-md">
+          Laser accuracy, pressurized climate-controlled cleanrooms, and robotic plotting for flawless automotive execution.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Pillar 01: Window Tinting -->
+<div class="group bg-carbon/90 rounded-2xl p-6 border border-white/10 hover:border-crimson/70 transition-all flex flex-col justify-between" id="tinting">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-display font-black text-2xl text-crimson">01</span>
+<span class="text-[9px] font-mono px-2 py-0.5 rounded bg-white/5 text-silver border border-white/10">LEGAL COMPLIANT</span>
+</div>
+<h3 class="font-display font-bold text-lg uppercase tracking-wide text-white group-hover:text-crimson transition-colors">
+              Window Tinting
+            </h3>
+<p class="text-xs text-silver mt-2 leading-relaxed">
+              Multi-layer nano-ceramic optical shielding rejecting 99% UV rays and 96% solar infrared heat with zero radio interference.
+            </p>
+<div class="mt-4 p-3 rounded bg-obsidian border border-white/5 text-[11px] font-mono">
+<div class="flex justify-between text-silver mb-1">
+<span>IR REJECTION</span>
+<span class="text-emerald-400 font-bold">96%</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-crimson to-emerald-400 h-full w-[96%]"></div>
+</div>
+</div>
+</div>
+<a class="mt-6 flex items-center justify-between text-xs font-mono font-bold text-white group-hover:text-crimson pt-4 border-t border-white/10" href="#simulator">
+<span>EXPLORE TINT HUB</span>
+<span>→</span>
+</a>
+</div>
+<!-- Pillar 02: Ceramic & Graphene Coating -->
+<div class="group bg-carbon/90 rounded-2xl p-6 border border-white/10 hover:border-crimson/70 transition-all flex flex-col justify-between" id="coating">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-display font-black text-2xl text-crimson">02</span>
+<span class="text-[9px] font-mono px-2 py-0.5 rounded bg-white/5 text-silver border border-white/10">10H HARDNESS</span>
+</div>
+<h3 class="font-display font-bold text-lg uppercase tracking-wide text-white group-hover:text-crimson transition-colors">
+              Ceramic &amp; Graphene
+            </h3>
+<p class="text-xs text-silver mt-2 leading-relaxed">
+              Molecular covalent bonding creating a glass shield resistant to acid rain, bird dropping corrosion, and micro-marring.
+            </p>
+<div class="mt-4 p-3 rounded bg-obsidian border border-white/5 text-[11px] font-mono">
+<div class="flex justify-between text-silver mb-1">
+<span>BEADING ANGLE</span>
+<span class="text-cyan-400 font-bold">115°</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-crimson to-cyan-400 h-full w-[92%]"></div>
+</div>
+</div>
+</div>
+<a class="mt-6 flex items-center justify-between text-xs font-mono font-bold text-white group-hover:text-crimson pt-4 border-t border-white/10" href="#simulator">
+<span>EXPLORE COATING HUB</span>
+<span>→</span>
+</a>
+</div>
+<!-- Pillar 03: PPF & Vinyl Armor -->
+<div class="group bg-carbon/90 rounded-2xl p-6 border border-white/10 hover:border-crimson/70 transition-all flex flex-col justify-between" id="ppf">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-display font-black text-2xl text-crimson">03</span>
+<span class="text-[9px] font-mono px-2 py-0.5 rounded bg-white/5 text-silver border border-white/10">SELF-HEALING</span>
+</div>
+<h3 class="font-display font-bold text-lg uppercase tracking-wide text-white group-hover:text-crimson transition-colors">
+              PPF &amp; Vinyl Armor
+            </h3>
+<p class="text-xs text-silver mt-2 leading-relaxed">
+              Thermoplastic 8.5-mil sacrificial film shielding panels against high-speed stone chips with instantaneous sun heat recovery.
+            </p>
+<div class="mt-4 p-3 rounded bg-obsidian border border-white/5 text-[11px] font-mono">
+<div class="flex justify-between text-silver mb-1">
+<span>HEAT RECOVERY</span>
+<span class="text-white font-bold">&lt; 30 SEC</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-crimson h-full w-[98%]"></div>
+</div>
+</div>
+</div>
+<a class="mt-6 flex items-center justify-between text-xs font-mono font-bold text-white group-hover:text-crimson pt-4 border-t border-white/10" href="#packages">
+<span>EXPLORE PPF HUB</span>
+<span>→</span>
+</a>
+</div>
+<!-- Pillar 04: Custom Paint Studio -->
+<div class="group bg-carbon/90 rounded-2xl p-6 border border-white/10 hover:border-crimson/70 transition-all flex flex-col justify-between" id="custom-paint">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-display font-black text-2xl text-crimson">04</span>
+<span class="text-[9px] font-mono px-2 py-0.5 rounded bg-white/5 text-silver border border-white/10">PRESSURIZED</span>
+</div>
+<h3 class="font-display font-bold text-lg uppercase tracking-wide text-white group-hover:text-crimson transition-colors">
+              Custom Paint Studio
+            </h3>
+<p class="text-xs text-silver mt-2 leading-relaxed">
+              Italian heated downdraft spray booths offering OEM+ concourse refinishing, pearl metallics, and high-temp caliper paintwork.
+            </p>
+<div class="mt-4 p-3 rounded bg-obsidian border border-white/5 text-[11px] font-mono">
+<div class="flex justify-between text-silver mb-1">
+<span>COLOR MATCH ACCURACY</span>
+<span class="text-crimson font-bold">99.9%</span>
+</div>
+<div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+<div class="bg-crimson h-full w-[99.9%]"></div>
+</div>
+</div>
+</div>
+<a class="mt-6 flex items-center justify-between text-xs font-mono font-bold text-white group-hover:text-crimson pt-4 border-t border-white/10" href="#quote-footer">
+<span>EXPLORE PAINT HUB</span>
+<span>→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 5: INTERACTIVE BEFORE & AFTER SLIDER              -->
+<!-- ======================================================== -->
+<section class="py-20 bg-carbon/50 border-t border-b border-white/10">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">
+        OPTICAL MICROSCOPY INSPECTION
+      </span>
+<h2 class="font-display font-black text-2xl sm:text-3xl uppercase tracking-wider text-white mt-1">
+        FACTORY SWIRLED CLEARCOAT VS 10H MIRROR CERAMIC
+      </h2>
+<p class="text-xs text-silver mt-2 max-w-xl mx-auto">
+        Drag the interactive optical separator to reveal high-intensity swirl scratch elimination and covalent liquid glass reflection.
+      </p>
+<!-- Before / After Slider Container -->
+<div class="relative w-full aspect-[16/9] max-h-[460px] rounded-2xl overflow-hidden mt-8 border border-white/15 shadow-2xl select-none" id="sliderWrapper">
+<!-- After Image (IMAGE_5 Ceramic Coating) -->
+<img alt="After 10H Mirror Ceramic" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XqcgLXKrn5PHcwJyisSjy0rHP52k0CEgzDqgqgoFy7l6TzESMHWu45b23fMMhBX2GD87N4JYOfYxHGSkZVEyAH1Fjb39_Sd1KAm93Wz0ZGSxuIA0f4p3C5pxHrIO_TVD24OaUjIiwByj80TbyG6cYopdVW_Vl2VBBYhoChEEytpxMsP2Gc9HCLtYT1y8ec7n5D3anEj9DWd9yCCT3wPoVKH3b6fvu7RpMhGdocIbTNelv24fbqjQNBQ2uh"/>
+<span class="absolute top-4 right-4 z-10 bg-black/80 text-white font-mono text-[10px] font-bold px-3 py-1 rounded border border-white/20">
+          AFTER: 10H CERAMIC + PPF (MIRROR FINISH)
+        </span>
+<!-- Before Image with Clip Path -->
+<div class="absolute inset-0 w-full h-full overflow-hidden" id="beforeDiv" style="width: 50%;">
+<img alt="Before Swirled Clearcoat" class="absolute inset-0 w-full h-full object-cover filter contrast-75 brightness-75 sepia-[0.25] blur-[0.4px]" src="https://lh3.googleusercontent.com/aida/AEtjO1XqcgLXKrn5PHcwJyisSjy0rHP52k0CEgzDqgqgoFy7l6TzESMHWu45b23fMMhBX2GD87N4JYOfYxHGSkZVEyAH1Fjb39_Sd1KAm93Wz0ZGSxuIA0f4p3C5pxHrIO_TVD24OaUjIiwByj80TbyG6cYopdVW_Vl2VBBYhoChEEytpxMsP2Gc9HCLtYT1y8ec7n5D3anEj9DWd9yCCT3wPoVKH3b6fvu7RpMhGdocIbTNelv24fbqjQNBQ2uh"/>
+<!-- Simulated micro-scratch overlay -->
+<div class="absolute inset-0 bg-white/[0.04]"></div>
+<span class="absolute top-4 left-4 z-10 bg-crimson text-white font-mono text-[10px] font-bold px-3 py-1 rounded shadow-glow-red">
+            BEFORE: FACTORY OXIDIZED &amp; SWIRLED
+          </span>
+</div>
+<!-- Draggable Divider Line -->
+<div class="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-1 bg-white cursor-ew-resize flex items-center justify-center z-30 shadow-[0_0_15px_rgba(255,255,255,0.8)]" id="sliderHandle">
+<div class="w-8 h-8 rounded-full bg-crimson border-2 border-white flex items-center justify-center text-white shadow-glow-red">
+<span class="material-symbols-outlined text-xs">unfold_more</span>
+</div>
+</div>
+<!-- Range Input (invisible on top) -->
+<input class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-40" max="100" min="0" oninput="handleComparisonSlide(this.value)" type="range" value="50"/>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 6: 6-STAGE STUDIO PROTOCOL TIMELINE               -->
+<!-- ======================================================== -->
+<section class="py-20 bg-obsidian text-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">LABORATORY STANDARDS</span>
+<h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-wider text-white mt-1">
+          THE 6-STAGE STUDIO PROTOCOL
+        </h2>
+<p class="text-xs text-silver mt-2">
+          Every vehicle undergoes our clinical white-glove intake and surgical installation process.
+        </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+<!-- Step 1 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">01 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Surface Decon</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">Multi-chemical iron fallout bath and clay bar treatment removing sub-surface brake contamination.</p>
+</div>
+<!-- Step 2 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">02 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Paint Correction</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">2-to-3 stage rotary compounding eliminating 98% of swirl marks under 5000K high-CRI inspection lights.</p>
+</div>
+<!-- Step 3 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">03 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Laser PPF Plot</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">Bespoke CAD laser templating to ensure zero razor-to-paint blade contact across edges and emblems.</p>
+</div>
+<!-- Step 4 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">04 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Nano-Tint Fit</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">Micro-edge shaved heat shrinking across double-curved hypercar glass in a positive-pressure cleanroom.</p>
+</div>
+<!-- Step 5 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">05 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Liquid Glass Coat</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">Dual-layer 10H graphene application cured under targeted short-wave infrared heat lamps for 16 hours.</p>
+</div>
+<!-- Step 6 -->
+<div class="p-4 rounded-xl bg-carbon/80 border border-white/10 hover:border-crimson/50 transition-all">
+<span class="font-mono text-crimson text-xs font-bold">06 / STAGE</span>
+<h4 class="font-display font-bold text-sm uppercase text-white mt-2">Certified Release</h4>
+<p class="text-[11px] text-silver mt-1.5 leading-relaxed">Gloss-meter gloss unit audit, warranty registry issuance, and enclosed shuttle delivery allocation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 7: DUAL CINEMA VIDEO REELS + TINT LAW LOOKUP      -->
+<!-- ======================================================== -->
+<section class="py-20 bg-carbon/70 border-t border-b border-white/10 text-white" id="videos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">BEHIND THE CURTAIN</span>
+<h2 class="font-display font-black text-2xl sm:text-4xl uppercase tracking-wider text-white mt-1">
+          INSIDE THE STUDIO
+        </h2>
+<p class="text-xs text-silver mt-2">
+          Cinematic video captures documenting multi-stage correction, laser PPF installs, and coating curation.
+        </p>
+</div>
+<!-- 2-Column Cinema Video Reels using IMAGE_5 and IMAGE_6 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-14">
+<!-- Video 1 using IMAGE_5 -->
+<div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-obsidian shadow-2xl">
+<div class="aspect-video w-full relative overflow-hidden">
+<img alt="Ceramic Coating Master Process" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" src="https://lh3.googleusercontent.com/aida/AEtjO1XqcgLXKrn5PHcwJyisSjy0rHP52k0CEgzDqgqgoFy7l6TzESMHWu45b23fMMhBX2GD87N4JYOfYxHGSkZVEyAH1Fjb39_Sd1KAm93Wz0ZGSxuIA0f4p3C5pxHrIO_TVD24OaUjIiwByj80TbyG6cYopdVW_Vl2VBBYhoChEEytpxMsP2Gc9HCLtYT1y8ec7n5D3anEj9DWd9yCCT3wPoVKH3b6fvu7RpMhGdocIbTNelv24fbqjQNBQ2uh"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-crimson flex items-center justify-center shadow-glow-red group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-black/80 text-white border border-white/20">
+              04:22 • 4K
+            </div>
+</div>
+<div class="p-5">
+<span class="text-[10px] font-mono text-crimson font-bold uppercase tracking-widest">STAGE 01 PROCESS</span>
+<h3 class="font-display font-bold text-sm uppercase text-white mt-1 group-hover:text-crimson transition-colors">
+              Multi-Stage Paint Correction &amp; 10H Ceramic Coating Process
+            </h3>
+<p class="text-xs text-silver mt-1 leading-relaxed">
+              Eliminating swirl marks under surgical high-CRI inspection lamps followed by liquid glass bonding.
+            </p>
+</div>
+</div>
+<!-- Video 2 using IMAGE_6 -->
+<div class="group relative rounded-2xl overflow-hidden border border-white/15 bg-obsidian shadow-2xl">
+<div class="aspect-video w-full relative overflow-hidden">
+<img alt="Laser Cut PPF Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-90" src="https://lh3.googleusercontent.com/aida/AEtjO1WHY7DuNOlB-rhBV6puWjadgEBVtzHRg96dNAkR1n4e_D3D1jo7pw2nmPDzq846h9BIhi7igLK16d8xVHvVh7Ruf9yH-rPbE7Ak7YYBqE2DV7554SOniAT-MU1D3JrN_1Ohm28dmGPZ-kvGoAKT9ZLjRQ26ioU8mzxtVS-bQ8VkgY-p3hGkzwYHZsB0390kwFB3lGtkBvXrsH_wB5LUKXXI2ISWKrhGa4euT3jnvDq-89niVsH9zuXSxJl5"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-crimson flex items-center justify-center shadow-glow-red group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-3xl ml-1">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-3 right-3 text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-black/80 text-white border border-white/20">
+              06:14 • 4K
+            </div>
+</div>
+<div class="p-5">
+<span class="text-[10px] font-mono text-crimson font-bold uppercase tracking-widest">STAGE 02 PROCESS</span>
+<h3 class="font-display font-bold text-sm uppercase text-white mt-1 group-hover:text-crimson transition-colors">
+              Laser-Cut PPF &amp; Nano-Ceramic Window Tint Installation
+            </h3>
+<p class="text-xs text-silver mt-1 leading-relaxed">
+              CAD plotting and cleanroom heat shrinkage application over aerodynamic curves and composite splitters.
+            </p>
+</div>
+</div>
+</div>
+<!-- State Tint Law & Warranty Lookup Module -->
+<div class="max-w-4xl mx-auto p-6 rounded-2xl bg-obsidian border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+<div>
+<span class="text-[10px] font-mono text-crimson uppercase font-bold tracking-wider">COMPLIANCE ENGINE</span>
+<h4 class="font-display font-bold text-base text-white uppercase mt-0.5">State VLT Tint Legal Compliance Registry</h4>
+<p class="text-xs text-silver mt-1">Check legal front door and rear window VLT% guidelines across all 50 US states &amp; EU directives.</p>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto">
+<select class="bg-carbon border border-white/15 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-crimson font-mono" id="stateSelect">
+<option value="CA: Front 70% | Rear Any">California (CA)</option>
+<option value="NY: Front 70% | Rear 70%">New York (NY)</option>
+<option value="FL: Front 28% | Rear 15%">Florida (FL)</option>
+<option value="TX: Front 25% | Rear Any">Texas (TX)</option>
+<option value="NV: Front 35% | Rear Any">Nevada (NV)</option>
+</select>
+<button class="px-4 py-2 bg-crimson hover:bg-crimson/90 text-white font-display font-bold text-xs uppercase rounded whitespace-nowrap" onclick="checkStateLaw()">
+            LOOKUP
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- ======================================================== -->
+<!-- SCENE 8: UPWARD-SLANTED SUPERCAR FOOTER & SITEMAP INDEX -->
+<!-- ======================================================== -->
+<footer class="relative pt-16 pb-12 bg-midnight text-white overflow-hidden clip-slant-white" id="quote-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 pt-6">
+<!-- Instant Studio Quote Funnel Bar -->
+<div class="bg-carbon/95 p-6 sm:p-8 rounded-2xl border-2 border-crimson/40 backdrop-blur-xl shadow-2xl mb-16">
+<div class="max-w-3xl mb-6">
+<span class="font-mono text-xs font-bold tracking-[0.25em] text-crimson uppercase block">
+            INSTANT VEHICLE QUOTE ENGINE
+          </span>
+<h3 class="font-display font-black text-xl sm:text-3xl uppercase tracking-wider text-white mt-1">
+            REQUEST DIRECT STUDIO ALLOCATION
+          </h3>
+<p class="text-xs text-silver mt-1">
+            Receive custom spec sheet, timeline estimate, and reserved cleanroom booth slot within 2 hours.
+          </p>
+</div>
+<form class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" onsubmit="handleQuoteForm(event)">
+<div>
+<label class="block text-[10px] font-mono text-silver uppercase mb-1 font-bold">1. Vehicle Model</label>
+<input class="w-full bg-obsidian border border-white/10 rounded px-3.5 py-2.5 text-xs text-white placeholder-silver/40 focus:outline-none focus:border-crimson" placeholder="e.g. 2024 Porsche 911 GT3 RS" required="" type="text"/>
+</div>
+<div>
+<label class="block text-[10px] font-mono text-silver uppercase mb-1 font-bold">2. Primary Pillar</label>
+<select class="w-full bg-obsidian border border-white/10 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-crimson">
+<option>Full Track Pack (PPF + Ceramic + Tint)</option>
+<option>01. Nano-Ceramic Window Tinting</option>
+<option>02. 10H Graphene Ceramic Coating</option>
+<option>03. Full-Body PPF / Stealth Wrap</option>
+<option>04. Custom Downdraft Paintwork</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-mono text-silver uppercase mb-1 font-bold">3. Phone or Email</label>
+<input class="w-full bg-obsidian border border-white/10 rounded px-3.5 py-2.5 text-xs text-white placeholder-silver/40 focus:outline-none focus:border-crimson" placeholder="+1 (555) 000-0000" required="" type="text"/>
+</div>
+<div class="flex items-end">
+<button class="w-full py-2.5 bg-crimson hover:bg-crimson/90 text-white font-display font-bold text-xs uppercase tracking-wider rounded shadow-glow-red transition-all flex items-center justify-center gap-1.5 h-[42px]" type="submit">
+<span>GET ESTIMATE</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+<div class="hidden mt-4 p-3 rounded bg-emerald-500/20 border border-emerald-500/50 text-emerald-300 text-xs font-mono" id="quoteNotice">
+          ✓ Specification received. Master technician assigned. Enclosed shuttle options sent via SMS.
+        </div>
+</div>
+<!-- Complete 16-Page Sitemap Directory -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 pb-12 border-b border-white/10 text-xs" id="sitemap">
+<!-- Pillar Group 1: 01-04 -->
+<div>
+<div class="flex items-center gap-2 mb-4">
+<div class="w-6 h-6 bg-crimson rounded flex items-center justify-center text-white font-display font-bold text-xs">A</div>
+<span class="font-display font-bold text-sm tracking-widest text-white uppercase">APEX STUDIO</span>
+</div>
+<h4 class="font-display font-bold text-xs uppercase tracking-wider text-crimson mb-2">Core Services</h4>
+<ul class="space-y-1.5 text-silver text-[11px] font-mono">
+<li><a class="hover:text-white transition-colors" href="#tinting">01. Window Tinting &amp; IR Rejection</a></li>
+<li><a class="hover:text-white transition-colors" href="#coating">02. Ceramic &amp; Graphene Coating</a></li>
+<li><a class="hover:text-white transition-colors" href="#ppf">03. Paint Protection Film (PPF)</a></li>
+<li><a class="hover:text-white transition-colors" href="#custom-paint">04. Custom Paint &amp; Calipers</a></li>
+</ul>
+</div>
+<!-- Pillar Group 2: 05-08 -->
+<div>
+<h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-3">Simulation &amp; Plans</h4>
+<ul class="space-y-1.5 text-silver text-[11px] font-mono">
+<li><a class="hover:text-white transition-colors" href="#simulator">05. Interactive 4-Pillar Visualizer</a></li>
+<li><a class="hover:text-white transition-colors" href="#packages">06. Vehicle Class Pricing Matrix</a></li>
+<li><a class="hover:text-white transition-colors" href="#packages">07. Essential Shield Package</a></li>
+<li><a class="hover:text-white transition-colors" href="#packages">08. Track &amp; Gloss Pro Package</a></li>
+</ul>
+</div>
+<!-- Pillar Group 3: 09-12 -->
+<div>
+<h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-3">Engineering Hub</h4>
+<ul class="space-y-1.5 text-silver text-[11px] font-mono">
+<li><a class="hover:text-white transition-colors" href="#packages">09. Bespoke Concourse Wrap</a></li>
+<li><a class="hover:text-white transition-colors" href="#videos">10. 4K Studio Process Films</a></li>
+<li><a class="hover:text-white transition-colors" href="#videos">11. State VLT Legal Compliance</a></li>
+<li><a class="hover:text-white transition-colors" href="#hero">12. ISO 9001 Technical Specs</a></li>
+</ul>
+</div>
+<!-- Pillar Group 4: 13-16 -->
+<div>
+<h4 class="font-display font-bold text-xs uppercase tracking-wider text-white mb-3">VIP Concierge</h4>
+<ul class="space-y-1.5 text-silver text-[11px] font-mono">
+<li><a class="hover:text-white transition-colors" href="#quote-footer">13. Instant Estimate Engine</a></li>
+<li><a class="hover:text-white transition-colors" href="#quote-footer">14. Enclosed Transport Logistics</a></li>
+<li><a class="hover:text-white transition-colors" href="#quote-footer">15. Cleanroom Studio Locator</a></li>
+<li><a class="hover:text-white transition-colors" href="#quote-footer">16. Master 10-Yr Warranty Portal</a></li>
+</ul>
+<div class="mt-4 pt-2 text-[11px] font-mono text-crimson font-bold">
+            Direct Concierge: +1 (800) 590-APEX
+          </div>
+</div>
+</div>
+<!-- Footer Bottom -->
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-silver gap-4">
+<div>
+          © 2025 APEX STUDIO AUTOMOTIVE S.P.A. ALL RIGHTS RESERVED.
+        </div>
+<div class="flex items-center gap-6">
+<a class="hover:text-white" href="#">PRIVACY POLICY</a>
+<a class="hover:text-white" href="#">TERMS OF WARRANTY</a>
+<a class="hover:text-white" href="#">LEGAL TINT REGISTRY</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ======================================================== -->
+<!-- JAVASCRIPT STATE ENGINES                                 -->
+<!-- ======================================================== -->
+<script>
+    // Hero Hotspot Spec Update
+    function updateHeroSpec(hotspot, desc) {
+      alert("APEX TELEMETRY [" + hotspot + "]:\n" + desc);
+    }
+
+    // Vehicle Class Pricing Tabs
+    const baseP1 = 499;
+    const baseP2 = 1299;
+    const baseP3 = 2899;
+
+    function setPricingClass(clsName, multiplier) {
+      document.querySelectorAll('.price-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-obsidian', 'text-white');
+        btn.classList.add('text-neutral-700');
+      });
+      event.target.classList.add('bg-obsidian', 'text-white');
+      event.target.classList.remove('text-neutral-700');
+
+      document.getElementById('priceCard1').innerText = '$' + Math.round(baseP1 * multiplier);
+      document.getElementById('priceCard2').innerText = '$' + Math.round(baseP2 * multiplier);
+      document.getElementById('priceCard3').innerText = '$' + Math.round(baseP3 * multiplier);
+    }
+
+    // Interactive Visualizer Slider & Tint Engine
+    function handleVltChange(val) {
+      const label = document.getElementById('vltValueLabel');
+      const mask = document.getElementById('simWindowTintMask');
+      const text = document.getElementById('simVltIndicatorText');
+      const irSpec = document.getElementById('specIrVal');
+
+      label.innerText = val + '% VLT';
+      text.innerText = val + '% TINT';
+
+      // Opacity formula: lower VLT = darker window
+      const opacity = 1 - (val / 100) * 0.9;
+      mask.style.backgroundColor = 'rgba(0, 0, 0, ' + opacity + ')';
+
+      // IR calculation
+      const calculatedIr = (99 - (val * 0.12)).toFixed(1);
+      irSpec.innerText = calculatedIr + '%';
+    }
+
+    function setCarFilter(styleName, filterValue) {
+      const car = document.getElementById('simCarProfile');
+      const glow = document.getElementById('simFloorGlow');
+      car.style.filter = filterValue;
+
+      if (styleName === 'crimson') {
+        glow.style.backgroundColor = 'rgba(217, 20, 36, 0.3)';
+      } else if (styleName === 'cobalt') {
+        glow.style.backgroundColor = 'rgba(10, 77, 148, 0.4)';
+      } else if (styleName === 'solar') {
+        glow.style.backgroundColor = 'rgba(229, 168, 18, 0.4)';
+      } else {
+        glow.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+      }
+    }
+
+    function toggleGlossBoost(checkbox) {
+      const shimmer = document.getElementById('simCeramicShimmer');
+      const gu = document.getElementById('specGuVal');
+      if (checkbox.checked) {
+        shimmer.classList.remove('opacity-0');
+        shimmer.classList.add('opacity-100');
+        gu.innerText = '109.4 GU';
+      } else {
+        shimmer.classList.add('opacity-0');
+        shimmer.classList.remove('opacity-100');
+        gu.innerText = '94.8 GU';
+      }
+    }
+
+    function setSpecClass(className) {
+      document.querySelectorAll('.spec-class-btn').forEach(b => {
+        b.classList.remove('bg-crimson', 'text-white', 'font-bold');
+        b.classList.add('text-silver');
+      });
+      event.target.classList.add('bg-crimson', 'text-white', 'font-bold');
+      event.target.classList.remove('text-silver');
+
+      const thickness = document.getElementById('specThicknessVal');
+      if (className === 'Sports') thickness.innerText = '8.5 Mil (215µ)';
+      if (className === 'Sedan') thickness.innerText = '8.2 Mil (208µ)';
+      if (className === 'SUV') thickness.innerText = '9.0 Mil (228µ)';
+    }
+
+    // Before & After Drag Slider
+    function handleComparisonSlide(val) {
+      const beforeDiv = document.getElementById('beforeDiv');
+      const handle = document.getElementById('sliderHandle');
+      beforeDiv.style.width = val + '%';
+      handle.style.left = val + '%';
+    }
+
+    // State Tint Law Lookup
+    function checkStateLaw() {
+      const val = document.getElementById('stateSelect').value;
+      alert("STATE REGULATION DETAILS:\n" + val + "\nCertified Apex Studio tint is 100% compliant with stamped state barcode.");
+    }
+
+    // Quote Submission
+    function handleQuoteForm(e) {
+      e.preventDefault();
+      const notice = document.getElementById('quoteNotice');
+      notice.classList.remove('hidden');
+    }
+  </script>
+</body></html>
